@@ -6,13 +6,13 @@
 #
 Name     : kapidox
 Version  : 5.49.0
-Release  : 1
+Release  : 2
 URL      : https://download.kde.org/stable/frameworks/5.49/kapidox-5.49.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.49/kapidox-5.49.0.tar.xz
 Source99 : https://download.kde.org/stable/frameworks/5.49/kapidox-5.49.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : MIT
+License  : BSD-2-Clause MIT
 Requires: kapidox-bin
 Requires: kapidox-python3
 Requires: kapidox-license
@@ -81,7 +81,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1535142610
+export SOURCE_DATE_EPOCH=1535144531
 mkdir clr-build
 pushd clr-build
 %cmake ..
@@ -89,9 +89,11 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1535142610
+export SOURCE_DATE_EPOCH=1535144531
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/kapidox
+cp LICENSE %{buildroot}/usr/share/doc/kapidox/LICENSE
+cp src/kapidox/data/htmlresource/3rd-party/bootstrap/LICENSE.txt %{buildroot}/usr/share/doc/kapidox/src_kapidox_data_htmlresource_3rd-party_bootstrap_LICENSE.txt
 cp src/kapidox/data/htmlresource/3rd-party/jquery/LICENSE.txt %{buildroot}/usr/share/doc/kapidox/src_kapidox_data_htmlresource_3rd-party_jquery_LICENSE.txt
 pushd clr-build
 %make_install
@@ -109,6 +111,8 @@ popd
 
 %files license
 %defattr(-,root,root,-)
+/usr/share/doc/kapidox/LICENSE
+/usr/share/doc/kapidox/src_kapidox_data_htmlresource_3rd-party_bootstrap_LICENSE.txt
 /usr/share/doc/kapidox/src_kapidox_data_htmlresource_3rd-party_jquery_LICENSE.txt
 
 %files man
