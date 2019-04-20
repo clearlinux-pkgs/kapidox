@@ -6,7 +6,7 @@
 #
 Name     : kapidox
 Version  : 5.57.0
-Release  : 19
+Release  : 20
 URL      : https://download.kde.org/stable/frameworks/5.57/kapidox-5.57.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.57/kapidox-5.57.0.tar.xz
 Source99 : https://download.kde.org/stable/frameworks/5.57/kapidox-5.57.0.tar.xz.sig
