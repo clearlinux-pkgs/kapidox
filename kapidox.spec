@@ -6,7 +6,7 @@
 #
 Name     : kapidox
 Version  : 5.64.0
-Release  : 29
+Release  : 30
 URL      : https://download.kde.org/stable/frameworks/5.64/kapidox-5.64.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.64/kapidox-5.64.0.tar.xz
 Source1 : https://download.kde.org/stable/frameworks/5.64/kapidox-5.64.0.tar.xz.sig
