@@ -6,7 +6,7 @@
 #
 Name     : kapidox
 Version  : 5.71.0
-Release  : 39
+Release  : 40
 URL      : https://download.kde.org/stable/frameworks/5.71/kapidox-5.71.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.71/kapidox-5.71.0.tar.xz
 Source1  : https://download.kde.org/stable/frameworks/5.71/kapidox-5.71.0.tar.xz.sig
@@ -81,7 +81,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1592241207
+export SOURCE_DATE_EPOCH=1592241365
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -97,7 +97,7 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1592241207
+export SOURCE_DATE_EPOCH=1592241365
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kapidox
 cp %{_builddir}/kapidox-5.71.0/LICENSE %{buildroot}/usr/share/package-licenses/kapidox/4f348e8e16c398ae808b12f1f31c8f32041f80fc
