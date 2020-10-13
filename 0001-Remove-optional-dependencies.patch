@@ -1,0 +1,19 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Patrick McCarty <patrick.mccarty@intel.com>
+Date: Tue, 13 Oct 2020 19:05:11 +0000
+Subject: [PATCH] Remove optional dependencies
+
+According to README.md, these pypi dependencies are optional.
+
+Signed-off-by: Patrick McCarty <patrick.mccarty@intel.com>
+---
+ requirements.txt | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/requirements.txt b/requirements.txt
+index 0039ac8..e69de29 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -1,2 +0,0 @@
+-doxypypy
+-doxyqml
