@@ -5,14 +5,14 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kapidox
-Version  : 5.73.0
-Release  : 43
-URL      : https://download.kde.org/stable/frameworks/5.73/kapidox-5.73.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.73/kapidox-5.73.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.73/kapidox-5.73.0.tar.xz.sig
+Version  : 5.75.0
+Release  : 44
+URL      : https://download.kde.org/stable/frameworks/5.75/kapidox-5.75.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.75/kapidox-5.75.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.75/kapidox-5.75.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : BSD-2-Clause MIT
+License  : BSD-2-Clause CC0-1.0 MIT
 Requires: kapidox-bin = %{version}-%{release}
 Requires: kapidox-license = %{version}-%{release}
 Requires: kapidox-man = %{version}-%{release}
@@ -73,15 +73,15 @@ python3 components for the kapidox package.
 
 
 %prep
-%setup -q -n kapidox-5.73.0
-cd %{_builddir}/kapidox-5.73.0
+%setup -q -n kapidox-5.75.0
+cd %{_builddir}/kapidox-5.75.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1597702272
+export SOURCE_DATE_EPOCH=1602601384
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -97,11 +97,12 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1597702272
+export SOURCE_DATE_EPOCH=1602601384
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kapidox
-cp %{_builddir}/kapidox-5.73.0/LICENSE %{buildroot}/usr/share/package-licenses/kapidox/4f348e8e16c398ae808b12f1f31c8f32041f80fc
-cp %{_builddir}/kapidox-5.73.0/src/kapidox/data/htmlresource/3rd-party/jquery/LICENSE.txt %{buildroot}/usr/share/package-licenses/kapidox/1238983d71130d0d96aad2acc946818007c77734
+cp %{_builddir}/kapidox-5.75.0/LICENSES/BSD-2-Clause.txt %{buildroot}/usr/share/package-licenses/kapidox/680ed9349d3d12bd39ddd36e8c4bc6b1b0cb1c0e
+cp %{_builddir}/kapidox-5.75.0/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kapidox/8287b608d3fa40ef401339fd907ca1260c964123
+cp %{_builddir}/kapidox-5.75.0/src/kapidox/data/htmlresource/3rd-party/jquery/LICENSE.txt %{buildroot}/usr/share/package-licenses/kapidox/1238983d71130d0d96aad2acc946818007c77734
 pushd clr-build
 %make_install
 popd
@@ -119,7 +120,8 @@ popd
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/kapidox/1238983d71130d0d96aad2acc946818007c77734
-/usr/share/package-licenses/kapidox/4f348e8e16c398ae808b12f1f31c8f32041f80fc
+/usr/share/package-licenses/kapidox/680ed9349d3d12bd39ddd36e8c4bc6b1b0cb1c0e
+/usr/share/package-licenses/kapidox/8287b608d3fa40ef401339fd907ca1260c964123
 
 %files man
 %defattr(0644,root,root,0755)
