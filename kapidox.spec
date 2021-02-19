@@ -6,7 +6,7 @@
 #
 Name     : kapidox
 Version  : 5.78.0
-Release  : 54
+Release  : 55
 URL      : https://download.kde.org/stable/frameworks/5.78/kapidox-5.78.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.78/kapidox-5.78.0.tar.xz
 Source1  : https://download.kde.org/stable/frameworks/5.78/kapidox-5.78.0.tar.xz.sig
