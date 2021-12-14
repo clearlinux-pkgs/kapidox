@@ -6,7 +6,7 @@
 #
 Name     : kapidox
 Version  : 5.88.0
-Release  : 70
+Release  : 71
 URL      : https://download.kde.org/stable/frameworks/5.88/kapidox-5.88.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.88/kapidox-5.88.0.tar.xz
 Source1  : https://download.kde.org/stable/frameworks/5.88/kapidox-5.88.0.tar.xz.sig
