@@ -6,7 +6,7 @@
 #
 Name     : kapidox
 Version  : 5.89.0
-Release  : 72
+Release  : 73
 URL      : https://download.kde.org/stable/frameworks/5.89/kapidox-5.89.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.89/kapidox-5.89.0.tar.xz
 Source1  : https://download.kde.org/stable/frameworks/5.89/kapidox-5.89.0.tar.xz.sig
@@ -72,6 +72,9 @@ python components for the kapidox package.
 Summary: python3 components for the kapidox package.
 Group: Default
 Requires: python3-core
+Requires: pypi(jinja2)
+Requires: pypi(pyyaml)
+Requires: pypi(requests)
 
 %description python3
 python3 components for the kapidox package.
@@ -87,7 +90,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1639671546
+export SOURCE_DATE_EPOCH=1639768668
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -103,7 +106,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1639671546
+export SOURCE_DATE_EPOCH=1639768668
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kapidox
 cp %{_builddir}/kapidox-5.89.0/LICENSES/BSD-2-Clause.txt %{buildroot}/usr/share/package-licenses/kapidox/680ed9349d3d12bd39ddd36e8c4bc6b1b0cb1c0e
