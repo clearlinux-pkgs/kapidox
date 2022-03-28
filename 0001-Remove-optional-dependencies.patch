@@ -7,13 +7,31 @@ According to README.md, these pypi dependencies are optional.
 
 Signed-off-by: Patrick McCarty <patrick.mccarty@intel.com>
 ---
- requirements.txt | 2 --
- 1 file changed, 2 deletions(-)
+ requirements.frozen.txt | 2 --
+ setup.py                | 2 +-
+ 2 files changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/requirements.txt b/requirements.txt
-index 0039ac8..e69de29 100644
---- a/requirements.txt
-+++ b/requirements.txt
-@@ -1,2 +0,0 @@
--doxypypy
--doxyqml
+diff --git a/requirements.frozen.txt b/requirements.frozen.txt
+index ab72c0b..00c4967 100644
+--- a/requirements.frozen.txt
++++ b/requirements.frozen.txt
+@@ -1,8 +1,6 @@
+ attrs==21.2.0
+ certifi==2021.5.30
+ chardet==4.0.0
+-doxypypy==0.8.8.6
+-doxyqml==0.5.1
+ idna==2.10
+ Jinja2==3.0.1
+ MarkupSafe==2.0.1
+diff --git a/setup.py b/setup.py
+index 44985d0..a00073f 100755
+--- a/setup.py
++++ b/setup.py
+@@ -17,5 +17,5 @@ setup(
+                 "kapidox-depdiagram-generate = kapidox.depdiagram_generate:main",
+             ],
+         },
+-        install_requires=["doxypypy", "doxyqml", "requests", "jinja2", "pyyaml"]
++        install_requires=["requests", "jinja2", "pyyaml"]
+     )

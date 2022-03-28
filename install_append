@@ -1,0 +1,3 @@
+dest=%{buildroot}/usr/share/man/man1
+mkdir -p $dest
+cp -a ./docs/*.1 $dest/
