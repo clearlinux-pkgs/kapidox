@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kapidox
-Version  : 5.94.0
-Release  : 78
-URL      : https://download.kde.org/stable/frameworks/5.94/kapidox-5.94.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.94/kapidox-5.94.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.94/kapidox-5.94.0.tar.xz.sig
+Version  : 5.95.0
+Release  : 79
+URL      : https://download.kde.org/stable/frameworks/5.95/kapidox-5.95.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.95/kapidox-5.95.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.95/kapidox-5.95.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause CC0-1.0 LGPL-3.0 MIT
@@ -80,16 +80,19 @@ python3 components for the kapidox package.
 
 
 %prep
-%setup -q -n kapidox-5.94.0
-cd %{_builddir}/kapidox-5.94.0
+%setup -q -n kapidox-5.95.0
+cd %{_builddir}/kapidox-5.95.0
 %patch1 -p1
+pushd ..
+cp -a kapidox-5.95.0 buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1652678794
+export SOURCE_DATE_EPOCH=1655410972
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -101,27 +104,45 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
+pushd ../buildavx2/
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
+export FFLAGS="$FFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
+export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3 "
+export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3 "
+python3 setup.py build
+
+popd
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kapidox
-cp %{_builddir}/kapidox-5.94.0/LICENSES/BSD-2-Clause.txt %{buildroot}/usr/share/package-licenses/kapidox/680ed9349d3d12bd39ddd36e8c4bc6b1b0cb1c0e
-cp %{_builddir}/kapidox-5.94.0/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kapidox/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
-cp %{_builddir}/kapidox-5.94.0/LICENSES/LGPL-3.0-or-later.txt %{buildroot}/usr/share/package-licenses/kapidox/757b86330df80f81143d5916b3e92b4bcb1b1890
-cp %{_builddir}/kapidox-5.94.0/kapidox/data/htmlresource/3rd-party/jquery/LICENSE.txt %{buildroot}/usr/share/package-licenses/kapidox/1238983d71130d0d96aad2acc946818007c77734
-cp %{_builddir}/kapidox-5.94.0/kapidox/data/htmlresource/icons/api-kde-org@1x.png.license %{buildroot}/usr/share/package-licenses/kapidox/3130f127d410d33b06d00cf5ee0a28a921eb7f44
-cp %{_builddir}/kapidox-5.94.0/kapidox/data/htmlresource/icons/api-kde-org@2x.png.license %{buildroot}/usr/share/package-licenses/kapidox/3130f127d410d33b06d00cf5ee0a28a921eb7f44
-cp %{_builddir}/kapidox-5.94.0/kapidox/data/htmlresource/icons/api-kde-org@3x.png.license %{buildroot}/usr/share/package-licenses/kapidox/3130f127d410d33b06d00cf5ee0a28a921eb7f44
-cp %{_builddir}/kapidox-5.94.0/kapidox/data/htmlresource/icons/api-kde-org@4x.png.license %{buildroot}/usr/share/package-licenses/kapidox/3130f127d410d33b06d00cf5ee0a28a921eb7f44
+cp %{_builddir}/kapidox-5.95.0/LICENSES/BSD-2-Clause.txt %{buildroot}/usr/share/package-licenses/kapidox/680ed9349d3d12bd39ddd36e8c4bc6b1b0cb1c0e
+cp %{_builddir}/kapidox-5.95.0/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kapidox/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
+cp %{_builddir}/kapidox-5.95.0/LICENSES/LGPL-3.0-or-later.txt %{buildroot}/usr/share/package-licenses/kapidox/757b86330df80f81143d5916b3e92b4bcb1b1890
+cp %{_builddir}/kapidox-5.95.0/kapidox/data/htmlresource/3rd-party/jquery/LICENSE.txt %{buildroot}/usr/share/package-licenses/kapidox/1238983d71130d0d96aad2acc946818007c77734
+cp %{_builddir}/kapidox-5.95.0/kapidox/data/htmlresource/icons/api-kde-org@1x.png.license %{buildroot}/usr/share/package-licenses/kapidox/3130f127d410d33b06d00cf5ee0a28a921eb7f44
+cp %{_builddir}/kapidox-5.95.0/kapidox/data/htmlresource/icons/api-kde-org@2x.png.license %{buildroot}/usr/share/package-licenses/kapidox/3130f127d410d33b06d00cf5ee0a28a921eb7f44
+cp %{_builddir}/kapidox-5.95.0/kapidox/data/htmlresource/icons/api-kde-org@3x.png.license %{buildroot}/usr/share/package-licenses/kapidox/3130f127d410d33b06d00cf5ee0a28a921eb7f44
+cp %{_builddir}/kapidox-5.95.0/kapidox/data/htmlresource/icons/api-kde-org@4x.png.license %{buildroot}/usr/share/package-licenses/kapidox/3130f127d410d33b06d00cf5ee0a28a921eb7f44
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
+pushd ../buildavx2/
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
+export FFLAGS="$FFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
+export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3 "
+export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3 "
+python3 -tt setup.py build install --root=%{buildroot}-v3
+popd
 ## install_append content
 dest=%{buildroot}/usr/share/man/man1
 mkdir -p $dest
 cp -a ./docs/*.1 $dest/
 ## install_append end
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
