@@ -6,7 +6,7 @@
 #
 Name     : kapidox
 Version  : 5.95.0
-Release  : 79
+Release  : 80
 URL      : https://download.kde.org/stable/frameworks/5.95/kapidox-5.95.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.95/kapidox-5.95.0.tar.xz
 Source1  : https://download.kde.org/stable/frameworks/5.95/kapidox-5.95.0.tar.xz.sig
@@ -92,7 +92,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1655410972
+export SOURCE_DATE_EPOCH=1656369557
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -142,7 +142,7 @@ dest=%{buildroot}/usr/share/man/man1
 mkdir -p $dest
 cp -a ./docs/*.1 $dest/
 ## install_append end
-/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
