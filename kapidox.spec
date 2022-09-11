@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kapidox
-Version  : 5.97.0
-Release  : 85
-URL      : https://download.kde.org/stable/frameworks/5.97/kapidox-5.97.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.97/kapidox-5.97.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.97/kapidox-5.97.0.tar.xz.sig
+Version  : 5.98.0
+Release  : 86
+URL      : https://download.kde.org/stable/frameworks/5.98/kapidox-5.98.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.98/kapidox-5.98.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.98/kapidox-5.98.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause CC0-1.0 LGPL-3.0 MIT
@@ -79,11 +79,11 @@ python3 components for the kapidox package.
 
 
 %prep
-%setup -q -n kapidox-5.97.0
-cd %{_builddir}/kapidox-5.97.0
+%setup -q -n kapidox-5.98.0
+cd %{_builddir}/kapidox-5.98.0
 %patch1 -p1
 pushd ..
-cp -a kapidox-5.97.0 buildavx2
+cp -a kapidox-5.98.0 buildavx2
 popd
 
 %build
@@ -91,7 +91,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1660510595
+export SOURCE_DATE_EPOCH=1662940317
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -116,14 +116,14 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kapidox
-cp %{_builddir}/kapidox-%{version}/LICENSES/BSD-2-Clause.txt %{buildroot}/usr/share/package-licenses/kapidox/680ed9349d3d12bd39ddd36e8c4bc6b1b0cb1c0e
-cp %{_builddir}/kapidox-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kapidox/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
-cp %{_builddir}/kapidox-%{version}/LICENSES/LGPL-3.0-or-later.txt %{buildroot}/usr/share/package-licenses/kapidox/757b86330df80f81143d5916b3e92b4bcb1b1890
-cp %{_builddir}/kapidox-%{version}/kapidox/data/htmlresource/3rd-party/jquery/LICENSE.txt %{buildroot}/usr/share/package-licenses/kapidox/1238983d71130d0d96aad2acc946818007c77734
-cp %{_builddir}/kapidox-%{version}/kapidox/data/htmlresource/icons/api-kde-org@1x.png.license %{buildroot}/usr/share/package-licenses/kapidox/3130f127d410d33b06d00cf5ee0a28a921eb7f44
-cp %{_builddir}/kapidox-%{version}/kapidox/data/htmlresource/icons/api-kde-org@2x.png.license %{buildroot}/usr/share/package-licenses/kapidox/3130f127d410d33b06d00cf5ee0a28a921eb7f44
-cp %{_builddir}/kapidox-%{version}/kapidox/data/htmlresource/icons/api-kde-org@3x.png.license %{buildroot}/usr/share/package-licenses/kapidox/3130f127d410d33b06d00cf5ee0a28a921eb7f44
-cp %{_builddir}/kapidox-%{version}/kapidox/data/htmlresource/icons/api-kde-org@4x.png.license %{buildroot}/usr/share/package-licenses/kapidox/3130f127d410d33b06d00cf5ee0a28a921eb7f44
+cp %{_builddir}/kapidox-%{version}/LICENSES/BSD-2-Clause.txt %{buildroot}/usr/share/package-licenses/kapidox/680ed9349d3d12bd39ddd36e8c4bc6b1b0cb1c0e || :
+cp %{_builddir}/kapidox-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kapidox/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0 || :
+cp %{_builddir}/kapidox-%{version}/LICENSES/LGPL-3.0-or-later.txt %{buildroot}/usr/share/package-licenses/kapidox/757b86330df80f81143d5916b3e92b4bcb1b1890 || :
+cp %{_builddir}/kapidox-%{version}/kapidox/data/htmlresource/3rd-party/jquery/LICENSE.txt %{buildroot}/usr/share/package-licenses/kapidox/1238983d71130d0d96aad2acc946818007c77734 || :
+cp %{_builddir}/kapidox-%{version}/kapidox/data/htmlresource/icons/api-kde-org@1x.png.license %{buildroot}/usr/share/package-licenses/kapidox/3130f127d410d33b06d00cf5ee0a28a921eb7f44 || :
+cp %{_builddir}/kapidox-%{version}/kapidox/data/htmlresource/icons/api-kde-org@2x.png.license %{buildroot}/usr/share/package-licenses/kapidox/3130f127d410d33b06d00cf5ee0a28a921eb7f44 || :
+cp %{_builddir}/kapidox-%{version}/kapidox/data/htmlresource/icons/api-kde-org@3x.png.license %{buildroot}/usr/share/package-licenses/kapidox/3130f127d410d33b06d00cf5ee0a28a921eb7f44 || :
+cp %{_builddir}/kapidox-%{version}/kapidox/data/htmlresource/icons/api-kde-org@4x.png.license %{buildroot}/usr/share/package-licenses/kapidox/3130f127d410d33b06d00cf5ee0a28a921eb7f44 || :
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
