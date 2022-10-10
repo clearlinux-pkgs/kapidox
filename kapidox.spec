@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kapidox
-Version  : 5.98.0
-Release  : 86
-URL      : https://download.kde.org/stable/frameworks/5.98/kapidox-5.98.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.98/kapidox-5.98.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.98/kapidox-5.98.0.tar.xz.sig
+Version  : 5.99.0
+Release  : 87
+URL      : https://download.kde.org/stable/frameworks/5.99/kapidox-5.99.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.99/kapidox-5.99.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.99/kapidox-5.99.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause CC0-1.0 LGPL-3.0 MIT
@@ -79,11 +79,11 @@ python3 components for the kapidox package.
 
 
 %prep
-%setup -q -n kapidox-5.98.0
-cd %{_builddir}/kapidox-5.98.0
+%setup -q -n kapidox-5.99.0
+cd %{_builddir}/kapidox-5.99.0
 %patch1 -p1
 pushd ..
-cp -a kapidox-5.98.0 buildavx2
+cp -a kapidox-5.99.0 buildavx2
 popd
 
 %build
@@ -91,7 +91,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1662940317
+export SOURCE_DATE_EPOCH=1665411846
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
