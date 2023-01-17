@@ -11,19 +11,6 @@ Signed-off-by: Patrick McCarty <patrick.mccarty@intel.com>
  setup.py                | 2 +-
  2 files changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/requirements.frozen.txt b/requirements.frozen.txt
-index ab72c0b..00c4967 100644
---- a/requirements.frozen.txt
-+++ b/requirements.frozen.txt
-@@ -1,8 +1,6 @@
- attrs==21.2.0
- certifi==2021.5.30
- chardet==4.0.0
--doxypypy==0.8.8.6
--doxyqml==0.5.1
- idna==2.10
- Jinja2==3.0.1
- MarkupSafe==2.0.1
 diff --git a/setup.py b/setup.py
 index 44985d0..a00073f 100755
 --- a/setup.py
@@ -35,3 +22,13 @@ index 44985d0..a00073f 100755
 -        install_requires=["doxypypy", "doxyqml", "requests", "jinja2", "pyyaml"]
 +        install_requires=["requests", "jinja2", "pyyaml"]
      )
+--- kapidox-5.102.0/requirements.frozen.txt~	2022-12-20 11:14:57.000000000 +0000
++++ kapidox-5.102.0/requirements.frozen.txt	2023-01-17 14:57:30.507213925 +0000
+@@ -1,7 +1,5 @@
+ certifi==2022.12.7
+ charset-normalizer==2.1.1
+-doxypypy==0.8.8.6
+-doxyqml==0.5.1
+ idna==3.4
+ Jinja2==3.1.2
+ MarkupSafe==2.1.1
