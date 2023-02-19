@@ -6,7 +6,7 @@
 #
 Name     : kapidox
 Version  : 5.103.0
-Release  : 92
+Release  : 93
 URL      : https://download.kde.org/stable/frameworks/5.103/kapidox-5.103.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.103/kapidox-5.103.0.tar.xz
 Source1  : https://download.kde.org/stable/frameworks/5.103/kapidox-5.103.0.tar.xz.sig
@@ -94,7 +94,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1676300971
+export SOURCE_DATE_EPOCH=1676833377
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
