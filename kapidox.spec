@@ -9,7 +9,7 @@
 #
 Name     : kapidox
 Version  : 6.0.0
-Release  : 109
+Release  : 110
 URL      : https://download.kde.org/stable/frameworks/6.0/kapidox-6.0.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/6.0/kapidox-6.0.0.tar.xz
 Source1  : https://download.kde.org/stable/frameworks/6.0/kapidox-6.0.0.tar.xz.sig
@@ -98,7 +98,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1710778706
+export SOURCE_DATE_EPOCH=1710779033
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib

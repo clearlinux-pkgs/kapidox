@@ -2,3 +2,6 @@
 # picked up automatically. One name per line, no whitespace.
 pypi(doxyqml)
 pypi(doxypypy)
+pypi(jinja2)
+pypi(pyyaml)
+pypi(requests)
