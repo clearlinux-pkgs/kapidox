@@ -9,7 +9,7 @@
 #
 Name     : kapidox
 Version  : 6.2.0
-Release  : 115
+Release  : 116
 URL      : https://download.kde.org/stable/frameworks/6.2/kapidox-6.2.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/6.2/kapidox-6.2.0.tar.xz
 Source1  : https://download.kde.org/stable/frameworks/6.2/kapidox-6.2.0.tar.xz.sig
